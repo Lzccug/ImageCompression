@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <script src="js/exif.min.js"></script>
+  <script src="js/processImg.js"></script>
+  <style>
+
+  .imageFrame{
+    width: 240px;
+    position: relative;
+    margin: 10px auto;
+    border: 6px solid #c8c8c8;
+    background:url(images/albg.png);
+  }
+  .imageFrame input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 0;
+    background: none;
+    width: 100%;
+    height:100%;
+  }
+  .imageFrame input[type="file"]{
+    opacity:0;
+  }
+  .imageFrame img{
+    width: 100%;
+    display: block;
+  }
+  </style>
+</head>
+<body>
+  <div class="imageFrame">
+      <input name="upimage" id="upimage" type="file">
+      <input type="button" id="upimageButton" onclick="upimage.click()">
+      <img id="showimage" src="images/dengni37.jpg" alt="">
+  </div>
+  <div style="display:block;">
+  </div>
+<script>
+  compressImg('upimage','showimage',480);
+</script>
+</body>
+</html>
