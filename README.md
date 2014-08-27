@@ -24,7 +24,11 @@ ImageCompression
 步骤三：
       调用compressImg方法，如下：
       
-      compressImg('upimage','showimage',480);
+      compressImg('upimage','showimage',480,function(src){
+            //此处为回调函数，当图片压缩完成并成功显示后执行
+            //可得到图片数据值src
+            console.log(src);
+      });
       'upimage'为图片上传按钮ID，
       'showimage'为图片预览按钮ID，
       最后一个参数为被压缩后图片的宽度。
