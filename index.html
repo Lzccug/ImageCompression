@@ -11,7 +11,7 @@
     position: relative;
     margin: 10px auto;
     border: 6px solid #c8c8c8;
-    background:url(images/albg.png);
+    background:rgba(0,0,0,0.3);
   }
   .imageFrame input{
     position: absolute;
@@ -40,7 +40,9 @@
   <div style="display:block;">
   </div>
 <script>
-  compressImg('upimage','showimage',480);
+  compressImg('upimage','showimage',480,function(src){
+    console.log(src);
+  });
 </script>
 </body>
 </html>

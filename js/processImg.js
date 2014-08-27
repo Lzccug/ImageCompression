@@ -10,7 +10,7 @@
 (function(){
 
 
-	window.compressImg = function(inputId,viewId,afterWidth){
+	window.compressImg = function(inputId,viewId,afterWidth,callback){
 
 		var inputFile = document.getElementById(inputId),
 			viewImg = document.getElementById(viewId),
@@ -86,6 +86,8 @@
 	            	// 获取压缩后生成的img对象
             		viewImg.src = convertCanvasToImage(hidCanvas).src;
             		self.value = "";
+            		// 此处将得到的图片数据回调
+            		if(callback!=undefined){callback(viewImg.src)};
 	            }
 	        }
 	    }
